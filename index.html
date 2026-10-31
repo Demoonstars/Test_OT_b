@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Итоговый тест по вводному инструктажу по охране труда" />
+  <title>Итоговый тест — Вводный инструктаж по охране труда</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- СЦЕНА 1: Приветствие -->
+  <section id="scene-welcome" class="scene active" aria-label="Приветствие" role="main">
+    <div class="scene-inner welcome-inner">
+      <div class="welcome-icon" aria-hidden="true">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="40" cy="40" r="40" fill="var(--color-primary-light)"/>
+          <circle cx="40" cy="28" r="7" fill="var(--color-primary)"/>
+          <rect x="31" y="39" width="18" height="22" rx="3" fill="var(--color-primary)"/>
+          <rect x="31" y="39" width="18" height="4" rx="2" fill="var(--color-primary-dark)"/>
+        </svg>
+      </div>
+      <h1 class="welcome-title">Итоговый тест по вводному инструктажу</h1>
+      <p class="welcome-subtitle">Проверьте свои знания по охране труда</p>
+      <p class="welcome-description">
+        Этот тест предназначен для проверки знаний после прохождения вводного инструктажа.
+        Убедитесь, что вы внимательно изучили материалы перед началом тестирования.
+      </p>
+      <div class="welcome-meta">
+        <div class="meta-item"><span class="meta-icon" aria-hidden="true">📋</span><span>20 вопросов</span></div>
+        <div class="meta-item"><span class="meta-icon" aria-hidden="true">✅</span><span>Порог сдачи — 85%</span></div>
+        <div class="meta-item"><span class="meta-icon" aria-hidden="true">⏱</span><span>~10–15 минут</span></div>
+      </div>
+      <button class="btn btn-primary btn-large" id="btn-start" type="button">
+        Начать тест <span class="btn-arrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- СЦЕНА 2: Согласие на обработку ПДн -->
+  <section id="scene-consent" class="scene" aria-label="Согласие на обработку персональных данных" role="main">
+    <div class="scene-inner">
+      <div class="scene-header">
+        <div class="step-badge">Шаг 1 из 3</div>
+        <h2 class="scene-title">Согласие на обработку персональных данных</h2>
+      </div>
+      <div class="consent-box" role="document" aria-label="Текст согласия">
+        <h3 class="consent-box-title">Уважаемый участник тестирования!</h3>
+        <p>В соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных»
+        настоящим подтверждаю своё согласие на обработку моих персональных данных
+        (фамилия, имя, отчество, дата рождения, наименование организации, должность,
+        подразделение, дата трудоустройства) в целях:</p>
+        <ul>
+          <li>проведения тестирования по вводному инструктажу по охране труда;</li>
+          <li>записи и хранения результатов тестирования;</li>
+          <li>подтверждения факта прохождения инструктажа.</li>
+        </ul>
+        <p>Обработка персональных данных осуществляется в объёме, необходимом для достижения
+        указанных целей. Данные хранятся в защищённой электронной системе и не передаются
+        третьим лицам без вашего согласия, за исключением случаев, предусмотренных
+        действующим законодательством РФ.</p>
+        <p>Согласие может быть отозвано в любой момент путём письменного обращения
+        к ответственному за охрану труда.</p>
+      </div>
+      <label class="consent-check-label" for="consent-checkbox">
+        <input type="checkbox" id="consent-checkbox" class="consent-checkbox" aria-describedby="consent-desc" />
+        <span class="consent-check-custom" aria-hidden="true"></span>
+        <span id="consent-desc">Я ознакомился(-ась) с условиями и даю согласие на обработку моих персональных данных</span>
+      </label>
+      <button class="btn btn-primary btn-large" id="btn-consent-continue" type="button" disabled aria-disabled="true">
+        Продолжить <span class="btn-arrow" aria-hidden="true">&#x2192;</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- СЦЕНА 3: Ввод персональных данных -->
+  <section id="scene-form" class="scene" aria-label="Ввод персональных данных" role="main">
+    <div class="scene-inner">
+      <div class="scene-header">
+        <div class="step-badge">Шаг 2 из 3</div>
+        <h2 class="scene-title">Персональные данные</h2>
+        <p class="scene-subtitle">Заполните все поля. Они необходимы для сохранения результатов.</p>
+      </div>
+      <form id="user-form" novalidate aria-label="Форма персональных данных">
+        <div class="form-grid">
+          <div class="form-group form-group-full">
+            <label class="form-label" for="input-fullname">ФИО <span class="required-star" aria-hidden="true">*</span></label>
+            <input type="text" id="input-fullname" class="form-input" placeholder="Иванов Иван Иванович" autocomplete="name" aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="input-org">Организация <span class="required-star" aria-hidden="true">*</span></label>
+            <input type="text" id="input-org" class="form-input" placeholder="ООО &#171;Название&#187;" autocomplete="organization" aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="input-position">Должность <span class="required-star" aria-hidden="true">*</span></label>
+            <input type="text" id="input-position" class="form-input" placeholder="Инженер" aria-required="true" />
+          </div>
+          <div class="form-group form-group-full">
+            <label class="form-label" for="input-department">Подразделение <span class="required-star" aria-hidden="true">*</span></label>
+            <input type="text" id="input-department" class="form-input" placeholder="Производственный отдел" aria-required="true" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="input-birthdate">Дата рождения <span class="required-star" aria-hidden="true">*</span></label>
+            <input type="date" id="input-birthdate" class="form-input" aria-required="true" max="2007-12-31" min="1940-01-01" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="input-hiredate">Дата трудоустройства <span class="required-star" aria-hidden="true">*</span></label>
+            <input type="date" id="input-hiredate" class="form-input" aria-required="true" min="1990-01-01" />
+          </div>
+        </div>
+        <p class="form-required-note"><span class="required-star" aria-hidden="true">*</span> — обязательные поля</p>
+        <button class="btn btn-primary btn-large" id="btn-form-submit" type="button" disabled aria-disabled="true">
+          Перейти к тесту <span class="btn-arrow" aria-hidden="true">&#x2192;</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- СЦЕНА 4: Тестирование -->
+  <section id="scene-quiz" class="scene" aria-label="Тестирование" role="main">
+    <div class="scene-inner quiz-inner">
+      <div class="quiz-progress-wrap">
+        <div class="quiz-progress-info">
+          <span class="step-badge">Шаг 3 из 3</span>
+          <span class="quiz-counter" id="quiz-counter" aria-live="polite">Вопрос 1 из 20</span>
+        </div>
+        <div class="progress-bar-track" role="progressbar"
+          aria-valuemin="0" aria-valuemax="20" aria-valuenow="0" id="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+      <div class="question-card" id="question-card">
+        <p class="question-number" id="question-number" aria-hidden="true">01</p>
+        <h2 class="question-text" id="question-text"></h2>
+        <div class="options-list" id="options-list" role="radiogroup" aria-labelledby="question-text"></div>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn btn-primary btn-large" id="btn-next" type="button" disabled aria-disabled="true">
+          <span id="btn-next-label">Далее</span>
+          <span class="btn-arrow" aria-hidden="true">&#x2192;</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- СЦЕНА 5: Результат -->
+  <section id="scene-result" class="scene" aria-label="Результат тестирования" role="main">
+    <div class="scene-inner result-inner">
+      <div class="result-icon-wrap" id="result-icon-wrap" aria-hidden="true"></div>
+      <h2 class="result-title" id="result-title"></h2>
+      <p class="result-text" id="result-text"></p>
+      <div class="result-score-wrap">
+        <div class="result-score-circle" id="result-score-circle">
+          <svg class="score-ring" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="score-ring-bg" cx="60" cy="60" r="50"/>
+            <circle class="score-ring-fill" id="score-ring-fill" cx="60" cy="60" r="50"
+              stroke-dasharray="314" stroke-dashoffset="314"/>
+          </svg>
+          <div class="score-ring-label">
+            <span class="score-number" id="score-number">0</span>
+            <span class="score-total">из 20</span>
+          </div>
+        </div>
+        <div class="result-stats">
+          <div class="stat-item">
+            <span class="stat-label">Правильных ответов</span>
+            <span class="stat-value" id="stat-correct">&#x2014;</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Результат</span>
+            <span class="stat-value" id="stat-percent">&#x2014;</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Статус</span>
+            <span class="stat-value stat-status" id="stat-status">&#x2014;</span>
+          </div>
+        </div>
+      </div>
+      <div class="submit-status" id="submit-status" aria-live="polite"></div>
+      <div class="result-actions">
+        <button class="btn btn-secondary btn-large" id="btn-retry" type="button">
+          Пройти заново
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
