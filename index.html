@@ -6,8 +6,85 @@
   <meta name="description" content="Итоговый тест по вводному инструктажу по охране труда" />
   <title>Итоговый тест — Вводный инструктаж по охране труда</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+  .back-to-course {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 9000;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 99px;
+    color: #475569;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .back-to-course:hover,
+  .back-to-course:focus-visible {
+    background: #ffffff;
+    color: #2563eb;
+    border-color: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.2);
+    outline: none;
+  }
+  .back-to-course svg {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .back-to-course:hover svg {
+    transform: translateX(-2px);
+  }
+  @media (max-width: 640px) {
+    .back-to-course {
+      top: 10px;
+      left: 10px;
+      padding: 7px 10px;
+      font-size: 0.75rem;
+      gap: 4px;
+      box-shadow: 0 3px 10px rgba(15, 23, 42, 0.12);
+    }
+    .back-to-course svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+  @media (max-width: 380px) {
+    .back-to-course {
+      padding: 0;
+      width: 38px;
+      height: 38px;
+    }
+    .back-to-course-text {
+      display: none;
+    }
+  }
+</style>
 </head>
 <body>
+  <a href="https://demoonstars.github.io/ot-training-portal/ot-intro.html"
+   class="back-to-course"
+   aria-label="Вернуться к материалам курса">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+    <path d="M19 12H5M12 19l-7-7 7-7"/>
+  </svg>
+  <span class="back-to-course-text">К курсу</span>
+</a>
 
   <!-- СЦЕНА 1: Приветствие -->
   <section id="scene-welcome" class="scene active" aria-label="Приветствие" role="main">
