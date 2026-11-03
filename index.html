@@ -209,11 +209,15 @@
       <div class="question-card" id="question-card">
         <p class="question-number" id="question-number" aria-hidden="true">01</p>
         <h2 class="question-text" id="question-text"></h2>
-        <div class="options-list" id="options-list" role="radiogroup" aria-labelledby="question-text"></div>
+        <div class="options-list" id="options-list" role="group" aria-labelledby="question-text"></div>
       </div>
+      
+      <!-- Блок объяснений (скрыт по умолчанию) -->
+      <div class="explanation-box" id="explanation-box" style="display: none;" aria-live="polite"></div>
+
       <div class="quiz-nav">
-        <button class="btn btn-primary btn-large" id="btn-next" type="button" disabled aria-disabled="true">
-          <span id="btn-next-label">Далее</span>
+        <button class="btn btn-primary btn-large" id="btn-next" type="button">
+          <span id="btn-next-label">Ответить</span>
           <span class="btn-arrow" aria-hidden="true">&#x2192;</span>
         </button>
       </div>
